@@ -57,7 +57,7 @@
 
 import pandas as pd
 
-data = pd.read_csv('/Users/cindychang/Documents/school/大二/OR/midterm/data/instance05.csv')  # Adjust the path accordingly
+data = pd.read_csv('/Users/cindychang/Documents/school/大二/OR/midterm/data/instance01.csv')  # Adjust the path accordingly
 
 # machine id split to list
 def parse_machine_list(machine_list):

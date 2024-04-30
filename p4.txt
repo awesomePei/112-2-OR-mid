@@ -1,0 +1,9 @@
+Problem 4
+(20 points) Use your own words to introduce your heuristic algorithm to the instruct-
+ing team. You may write paragraphs of words, draw flow charts, present pseudocodes,
+and/or provide examples. There should also be a basic big-O analysis regarding the
+time complexity of your algorithm. Points will be given to you according to the logic of
+your algorithm and clearness of your description. Please try your best to convince the
+instructing team that your algorithm design is intuitively good.
+
+#單純來記一下文字kk
