@@ -57,7 +57,7 @@
 
 import pandas as pd
 
-data = pd.read_csv('/Users/cindychang/Documents/school/大二/OR/midterm/data/instance01.csv')  # Adjust the path accordingly
+data = pd.read_csv('/Users/cindychang/Documents/school/大二/OR/midterm/data/instance05.csv')  # Adjust the path accordingly
 
 # machine id split to list
 def parse_machine_list(machine_list):
@@ -113,16 +113,16 @@ for index, job in sorted_jobs.iterrows():
     assignments.append((job_id, job_schedule))
     
 # Print out the complete schedule    
-print("Job Scheduling:")
-for job_id, schedule in assignments:
-    print(f"\nJob {job_id} Scheduling:")
-    if not schedule:
-        print("  No stages scheduled.")
-    for stage_index, (start_time, end_time, machine) in schedule.items():
-        print(f"  Stage {stage_index + 1}:")
-        print(f"    Machine Assigned: Machine {machine}")
-        print(f"    Start Time: {start_time}")
-        print(f"    End Time: {end_time}")
+# print("Job Scheduling:")
+# for job_id, schedule in assignments:
+#     print(f"\nJob {job_id} Scheduling:")
+#     if not schedule:
+#         print("  No stages scheduled.")
+#     for stage_index, (start_time, end_time, machine) in schedule.items():
+#         print(f"  Stage {stage_index + 1}:")
+#         print(f"    Machine Assigned: Machine {machine}")
+#         print(f"    Start Time: {start_time}")
+#         print(f"    End Time: {end_time}")
 
 # Calculate tardiness for each job and print
 total_tardiness = 0
@@ -135,9 +135,9 @@ for job_id, schedule in assignments:
     
     tardiness = max(0, last_stage_end_time - job_due_time)
     total_tardiness += tardiness
-    print(f"Job {job_id}: Ends at {last_stage_end_time}, Due {job_due_time}, Tardiness {tardiness}")
+    # print(f"Job {job_id}: Ends at {last_stage_end_time}, Due {job_due_time}, Tardiness {tardiness}")
 
-print(f"Total Tardiness: {total_tardiness}")
+# print(f"Total Tardiness: {total_tardiness}")
 
 
 #correct output format
