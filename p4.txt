@@ -6,7 +6,6 @@ time complexity of your algorithm. Points will be given to you according to the 
 your algorithm and clearness of your description. Please try your best to convince the
 instructing team that your algorithm design is intuitively good.
 
-#單純來記一下文字kk
 To create a heuristic algorithm that aims to minimize tardiness for the job scheduling problem, 
 it's useful to design a method that balances computational efficiency with the quality of solutions. 
 Here's a proposed heuristic:

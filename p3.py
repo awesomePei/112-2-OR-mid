@@ -1,4 +1,4 @@
-import pandas as pd
+import pandas as pd # type: ignore
 
 data = pd.read_csv('/Users/cindychang/Documents/school/大二/OR/midterm/data/instance05.csv')  # Adjust the path accordingly
 
