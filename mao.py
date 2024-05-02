@@ -160,3 +160,16 @@ for stage in range(1,2):
                     print(f"Job {j} Stage {stage} in machine: {k}")
 
 print("Makespan: ", w.X)
+
+for j in jobs:
+    for k in [1, 2]:
+        for i in machines:
+            print(j, k, i, x[j, k, i].X)
+
+for j in jobs:
+    for l in jobs:
+        for k in [1, 2]:
+            for h in [1, 2]:
+                for i in machines:
+                    if(x[j, k, i].X == 1 and x[l, h, i].X == 1):
+                        print(j,k,l,h,i, y[j, k, l, h, i].X)
