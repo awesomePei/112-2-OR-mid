@@ -3,6 +3,6 @@
 Minimize
  
 Subject To
- R11: = 1
+ Job_Assignment_Stage2_6: = 1
 Bounds
 End

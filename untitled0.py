@@ -3,7 +3,7 @@ import gurobipy as gp
 from gurobipy import GRB
 
 # Define the path to your CSV file
-csv_file_path = 'instance05.csv'
+csv_file_path = '/Users/cindychang/Documents/school/大二/OR/midterm/data/instance05.csv'
 
 # Initialize a list to store the job IDs
 job_ids = []
