@@ -3,11 +3,9 @@ import pandas as pd # type: ignore
 data = pd.read_csv('/Users/cindychang/Documents/school/大二/OR/midterm/data/instance05.csv')  # Adjust the path accordingly
 
 # machine id split to list
-def parse_machine_list(machine_list):
-    if pd.isna(machine_list):
-        return []
-    return list(map(int, machine_list.split(',')))
+parse_machine_list = lambda machine_list: [] if pd.isna(machine_list) else list(map(int, machine_list.split(',')))
 
+# Apply the lambda function directly to the columns
 data['Stage-1 Machines'] = data['Stage-1 Machines'].apply(parse_machine_list)
 data['Stage-2 Machines'] = data['Stage-2 Machines'].apply(parse_machine_list)
 
@@ -95,3 +93,17 @@ for job_id, schedule in assignments:
 
 print(machine_result)
 print(completion_time_result)
+
+total_tardiness = 0
+for job_id, schedule in assignments:
+    job_due_time = sorted_jobs.loc[sorted_jobs['Job ID'] == job_id, 'Due Time'].iloc[0]
+    if schedule:
+        last_stage_end_time = schedule[max(schedule.keys())][1]
+    else:
+        last_stage_end_time = 0  # Default to 0 if no stage was scheduled
+    
+    tardiness = max(0, last_stage_end_time - job_due_time)
+    total_tardiness += tardiness
+    # print(f"Job {job_id}: Ends at {last_stage_end_time}, Due {job_due_time}, Tardiness {tardiness}")
+
+print(f"Total Tardiness: {total_tardiness}")

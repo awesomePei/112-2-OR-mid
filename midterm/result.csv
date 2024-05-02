@@ -1,0 +1,6 @@
+Data name,Time,Tardiness,Makespan,Feasibility
+instance04.csv,0.0034799575805664062,0,0,False
+instance05.csv,0.002492189407348633,0,0,False
+instance01.csv,0.002165079116821289,0,0,False
+instance02.csv,0.002371072769165039,0,0,False
+instance03.csv,0.0023348331451416016,0,0,False
