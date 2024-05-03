@@ -2,7 +2,7 @@ import pandas as pd #type:ignore
 from gurobipy import Model, GRB, quicksum #type:ignore
 
 # Load and clean your data
-data = pd.read_csv('/Users/cindychang/Documents/school/大二/OR/Mid/112-2-OR-mid/midterm/data/instance05.csv')
+data = pd.read_csv('/Users/cindychang/Documents/school/大二/OR/Mid/112-2-OR-mid/midterm/data/instance01.csv')
 
 def parse_machine_list(machine_list):
     if pd.isna(machine_list):
@@ -39,7 +39,6 @@ s2_machines = data['Stage-2 Machines'].tolist()
 machines = list(set(sum(data['Stage-1 Machines'].tolist(), []) + sum(data['Stage-2 Machines'].tolist(), [])))
 
 
-print(s2_machines)
 fillNoMachines(s2_machines, jobs, machines)
 
 
@@ -120,25 +119,28 @@ if model.status == GRB.INFEASIBLE:
 assigned_machine = 0
 
 
-for j in jobs:
-    for k in [1, 2]:
-        for l in jobs:
-            for h in [1, 2]:
-                print(y[j,k,l,h,1])
+# for j in jobs:
+#     for k in [1, 2]:
+#         for l in jobs:
+#             for h in [1, 2]:
+#                 print(y[j,k,l,h,1])
 
-for j in jobs:
-    for k in [1, 2]:
-        for i in machines:
-            print(x[j, k, i])
+# for j in jobs:
+#     for k in [1, 2]:
+#         for i in machines:
+#             print(x[j, k, i])
 
-
+each_makespan = max(c)
+makespan = max(each_makespan)
+print(f"makespan: {makespan}")
 
 if model.status == GRB.OPTIMAL:
     print(f"Total Tardiness: {model.objVal}")
     for j in jobs:
-        print(f"Job {j} Tardiness: {T[j].X}")
+        # print(f"Job {j} Tardiness: {T[j].X}")
         for stage in [1, 2]:
             for i in machines:
                 if (round(x[j, stage, i].x) == 1):
                     assigned_machine = i
-            print(f"Stage {stage} start time: {s[j, stage].X}, completion time: {c[j, stage].X}, assigned machine: {assigned_machine}")
+            # print(f"Stage {stage}, completion time: {c[j, stage].X}, assigned machine: {assigned_machine}")
+

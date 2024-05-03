@@ -1,6 +1,6 @@
 import pandas as pd # type: ignore
 
-data = pd.read_csv('/Users/cindychang/Documents/school/大二/OR/Mid/112-2-OR-MID/midterm/data/instance01.csv')  # Adjust the path accordingly
+data = pd.read_csv('/Users/cindychang/Downloads/scenarios/instance_scenario_5.csv')  # Adjust the path accordingly
 
 # machine id split to list
 parse_machine_list = lambda machine_list: [] if pd.isna(machine_list) else list(map(int, machine_list.split(',')))
@@ -106,4 +106,7 @@ for job_id, schedule in assignments:
     total_tardiness += tardiness
     # print(f"Job {job_id}: Ends at {last_stage_end_time}, Due {job_due_time}, Tardiness {tardiness}")
 
+makespan = max(completion_time_result)
+
 print(f"Total Tardiness: {total_tardiness}")
+print(f"Makespan: {makespan}")
