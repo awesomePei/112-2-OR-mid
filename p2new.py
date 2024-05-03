@@ -88,8 +88,6 @@ for j in jobs:
     for k in [1, 2]:
         model.addConstr(quicksum(x[j, k, i] for i in machines) == 1)
 
-print(s1_machines)
-print(s2_machines)
 
 for j in jobs:
     for i in machines:
