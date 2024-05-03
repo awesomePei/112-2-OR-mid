@@ -1,6 +1,6 @@
 import pandas as pd # type: ignore
 
-data = pd.read_csv('/Users/cindychang/Documents/school/大二/OR/midterm/data/instance05.csv')  # Adjust the path accordingly
+data = pd.read_csv('/Users/cindychang/Documents/school/大二/OR/Mid/112-2-OR-MID/midterm/data/instance01.csv')  # Adjust the path accordingly
 
 # machine id split to list
 parse_machine_list = lambda machine_list: [] if pd.isna(machine_list) else list(map(int, machine_list.split(',')))
